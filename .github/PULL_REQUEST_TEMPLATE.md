@@ -12,4 +12,4 @@
 
 ## Notes
 
-<!-- Anything reviewers should know — scope limits, follow-ups, related questions in docs/research/questions.md. -->
+<!-- Anything reviewers should know — scope limits, follow-ups, related open questions in the README (https://github.com/ahwlsqja/decklog#open-research-questions). -->

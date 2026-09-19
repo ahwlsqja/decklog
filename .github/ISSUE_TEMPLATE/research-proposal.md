@@ -24,4 +24,4 @@ assignees: []
 
 ## Related questions
 
-<!-- Which items in docs/research/questions.md does this touch? -->
+<!-- Which open questions in the README (https://github.com/ahwlsqja/decklog#open-research-questions) does this touch? -->

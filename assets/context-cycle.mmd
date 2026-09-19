@@ -1,0 +1,19 @@
+flowchart TD
+  History[("Shared incident history")]
+  Scope["Role and work scope"]
+  Context["Reconstruct task context"]
+  Reason["Reason about the next step"]
+  Action["Observe or act"]
+  Record["Record findings and unfinished work"]
+  History -->|goals, evidence, decisions| Context
+  Scope --> Context
+  Context --> Reason
+  Reason --> Action
+  Action --> Record
+  Record -->|publish new context| History
+  classDef history fill:#e7f0ff,stroke:#4169a8,color:#162b49;
+  classDef context fill:#fff3d9,stroke:#bd8a37,color:#513b1b;
+  classDef execution fill:#e3f2ef,stroke:#387b70,color:#173e37;
+  class History history;
+  class Scope,Context context;
+  class Reason,Action,Record execution;

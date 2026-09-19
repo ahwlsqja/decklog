@@ -1,0 +1,21 @@
+sequenceDiagram
+  participant H as shared history
+  participant A as agent A — incident scope
+  participant B as agent B — change scope
+  participant C as agent C — incident scope
+  activate A
+  A->>H: read incident context
+  H-->>A: goals, evidence, decisions
+  activate B
+  B->>H: read change context
+  H-->>B: constraints, prior findings
+  A->>H: record findings + open work
+  deactivate A
+  B->>H: record change evidence
+  activate C
+  C->>H: join scope, read open work
+  H-->>C: findings, evidence, obligations
+  C->>H: record next-step decision
+  deactivate B
+  C->>H: record outcome + remaining work
+  deactivate C

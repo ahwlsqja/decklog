@@ -1,0 +1,23 @@
+flowchart TD
+  subgraph C["centralized — one durable reasoner coordinates"]
+    direction LR
+    r1[agent] -->|report| hub["central LLM orchestrator"]
+    r2[agent] -->|report| hub
+    hub -->|choose + dispatch| r3[agent]
+    hub -->|choose + dispatch| r4[agent]
+  end
+  C ~~~ N
+  subgraph N["proposed N:M — agents read, write, and reason"]
+    direction LR
+    w1[agent] -->|append| hist[("authoritative history")]
+    w2[agent] -->|append| hist
+    hist -->|scoped read| w1
+    hist -->|scoped read| c1[agent]
+    n0["new agent"] -.->|joins a scope| hist
+  end
+  classDef agent fill:#e3f2ef,stroke:#387b70,color:#173e37;
+  classDef reasoner fill:#ece9f7,stroke:#6b5f9e,color:#2c2650;
+  classDef store fill:#e7f0ff,stroke:#4169a8,color:#162b49;
+  class r1,r2,r3,r4,w1,w2,c1,n0 agent;
+  class hub reasoner;
+  class hist store;
