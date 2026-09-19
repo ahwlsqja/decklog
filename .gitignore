@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Local coordination workspace (never published)
+.omx/
+
+# Local research collection archive — preserved on disk, excluded from Git
+/docs/research/project-identity/
